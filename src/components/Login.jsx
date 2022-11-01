@@ -57,7 +57,7 @@ const Login = () => {
         />
         <form onSubmit={handleLogin}>
           <div className="form-group">
-            <label htmlFor="username">Nombre de usuario</label>
+            <label htmlFor="username">Nombre de Usuario</label>
             <input
               type="text"
               className="form-control"
