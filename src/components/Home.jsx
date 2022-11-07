@@ -39,8 +39,8 @@ const Home = () => {
   const columns = [
     { field: "id", headerName: "ID", flex: 0.3 },
     { field: "razonsocial", headerName: "Razon Social", flex: 1 },
-    { field: "cuit", headerName: "CUIT", flex: 0.5 },
-    { field: "domicilio", headerName: "Domicilio", flex: 1 },
+    { field: "cuit", headerName: "CUIT", flex: 0.7 },
+    { field: "domicilio", headerName: "Domicilio", flex: 0.8 },
     { field: "concepto", headerName: "Concepto", flex: 1 },
     {
       field: "total",
@@ -65,6 +65,7 @@ const Home = () => {
 
     {
       field: "actions",
+      headerName:"Acciones",
       type: "actions",
       width: 80,
       getActions: (params) => [
@@ -151,7 +152,7 @@ const Home = () => {
             </>
           </DialogContent>
           <DialogActions>
-            <Button onClick={() => setOpen(false)}>Cerrar</Button>
+            <Button variant="contained" onClick={() => setOpen(false)}>Cerrar</Button>
           </DialogActions>
         </Dialog>
       </div>
