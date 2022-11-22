@@ -1,6 +1,7 @@
 import { useState } from "react";
 import User from "../servcices/user";
 import axios from "axios";
+import Auth from "../servcices/auth";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -26,12 +27,7 @@ const Login = () => {
     }
     setLoading(true);
 
-    axios
-      .post("http://localhost:4000/api/" + "signin", {
-        username,
-        password,
-      })
-      .then((res) => {
+    Auth.login(username,password).then((res) => {
         if (res.data.accessToken) {
           sessionStorage.setItem("user", JSON.stringify(res.data));
         }

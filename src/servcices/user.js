@@ -1,9 +1,11 @@
 import axios from "axios";
 import authHeader from "../servcices/auth-header";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080/api/";
+
 const getRecibos = () => {
   return axios
-    .get("http://localhost:4000/api/user/recibos", { headers: authHeader() })
+    .get(API_URL + "user/recibos", { headers: authHeader() })
     .catch((err) => {
       console.log(err);
     });
@@ -12,7 +14,7 @@ const getRecibos = () => {
 const postRecibo = (form, setPrint) => {
   axios
     .post(
-      "http://localhost:4000/api/user/addrecibo",
+      API_URL + "user/addrecibo",
       {
         form,
       },
